@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Bootstrap links-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+    <!--CSS files-->
+    <link rel="stylesheet" href="styles.css">
+    <title>To do list</title>
+</head>
+<body>
+<section id="main-section" class="container-fluid row justify-content-center">
+    <div class="col-lg-6 col-md-8 col-11">
+        <h1>Darāmo lietu saraksts</h1>
+        <ul class="to-do-list" id="to-do">
+
+        </ul>
+
+        <button type="button"  class="btn btn-secondary btn-sm add-button" data-toggle="modal" data-target="#addData">
+        Pievienot jaunu
+        </button>
+  
+        <!-- Modal add toDo -->
+        <div class="modal fade" id="addData" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <section id="main-section" class="container-fluid row justify-content-center">
+                    <div class="modal-inside-content">
+                        <h1>Darāmo lietu saraksts</h1>
+                        <h2>Pievienot jaunu</h2>
+                        <div id="input-fields">
+                            <p>Virsraksts:</p>
+                            <input type="text" placeholder="Virsraksts" id="title-new" />
+                            <p>Apraksts:</p>
+                            <textarea id="description-new" placeholder="Apraksts"></textarea>
+                        </div>
+                        <div id="buttons" class="row justify-content-center" >
+                            <div class="col-6">
+                                <button  class="btn btn-secondary btn-sm go-back-button" data-dismiss="modal" >Doties atpakaļ</button>
+                            </div>
+                            <div class="col-6">
+                                <button id="add-button" class="btn btn-success btn-sm add-button"  data-dismiss="modal">Pievienot</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            </div>
+        </div>
+        <!-- Modal edit toDo -->
+        <div class="modal fade" id="editData" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <section id="main-section" class="container-fluid row justify-content-center">
+                    <div class="modal-inside-content">
+                        <h1>Darāmo lietu saraksts</h1>
+                        <h2>Labot</h2>
+                        <div id="input-fields">
+                            <p>Virsraksts:</p>
+                            <input type="text" placeholder="Virsraksts" id="title-edit" />
+                            <p>Apraksts:</p>
+                            <textarea id="description-edit" placeholder="Apraksts"></textarea>
+                        </div>
+                        <div id="buttons" class="row justify-content-center" >
+                            <div class="col-6 col-lg-4 col-md-4 col-sm-4">
+                                <button id="back-button" class="btn btn-secondary btn-sm go-back-button" data-dismiss="modal">Doties atpakaļ</button>
+                            </div>
+                            <div class="col-6 col-lg-4 col-md-4 col-sm-4">
+                                <button id="delete-button" class="btn btn-danger btn-sm delete-button" data-dismiss="modal"  >Dzēst</button>
+                            </div>
+                            <div class="col-6 col-lg-4 col-md-4 col-sm-4">
+                                <button id="save-button" class="btn btn-success btn-sm save-button" data-dismiss="modal">Saglabāt</button>
+                            </div>
+    
+                        </div>
+                    </div>
+                </section>
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="app.js"></script>    
+</body>
+</html>
